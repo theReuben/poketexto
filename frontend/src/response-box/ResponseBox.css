@@ -1,0 +1,31 @@
+.response-box {
+    padding: 10px;
+    border: 1px solid var(--dark-bg);
+    border-radius: 5px;
+    color: var(--light-text);
+    width: var(--text-box-width);
+    height: var(--text-box-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background-color 0.1s; Smooth transition for background color change */
+  }
+  
+  .response-box p {
+    margin: 0;
+  }
+  
+  .response-box.congratulations {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .response-box.already-guessed {
+    border-color: #ff0000;
+    background-color: #ffd6d6; /* Light red background color for already guessed */
+  }
+  
+  .response-box.has-text-entered {
+    background-color: var(--light-bg); /* Set background color when text is entered */
+  }
+  

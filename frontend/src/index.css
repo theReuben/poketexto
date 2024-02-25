@@ -1,0 +1,74 @@
+:root {
+  --dark-bg: #333; /* Darker background color */
+  --light-bg: #f0f0f0; /* Lighter background color */
+  --light-text: #555; /* Lighter text color */
+  --dark-border: #999; /* Darker border color */
+  --primary-color: #6c5ce7; /* Soft purple as primary color */
+  --dark-hover: #4a3cc0; /* Darker hover color */
+  
+  --text-box-width: 200px; /* Width of the text box */
+  --text-box-height: 20px; /* Height of the text box */
+  --button-width: 100px; /* Width of the button */
+  --button-height: 40px; /* Height of the button */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+}
+
+form {
+  margin-top: 100px; /* Add margin to the top */
+  margin-bottom: 20px; /* Add margin to the bottom */
+  display: flex;
+}
+
+input, button {
+  padding: 10px;
+  border: 1px solid var(--dark-border);
+  border-radius: 5px;
+  width: var(--text-box-width); /* Set width of the text box */
+  height: var(--text-box-height); /* Set height of the text box */
+}
+
+input {
+  margin-right: 10px;
+  background-color: var(--light-bg);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: var(--button-width); /* Set width of the button */
+  height: var(--button-height); /* Set height of the button */
+}
+
+button:hover {
+  background-color: var(--dark-hover);
+}
+
+
+.guess {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--dark-border);
+  border-radius: 5px;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  width: calc(var(--text-box-width) + var(--button-width)); /* Calculate width of the guess box */
+}
+
+.guess p {
+  margin: 0;
+  font-size: 16px; /* Match font size with input form */
+}
+
+.guess.duplicate {
+  border-color: #ff0000; /* Brighter border color for highlighting */
+}
