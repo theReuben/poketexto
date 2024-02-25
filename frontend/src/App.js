@@ -9,6 +9,7 @@ function App() {
     const [duplicateGuess, setDuplicateGuess] = useState(false);
     const [correctGuess, setCorrectGuess] = useState(false);
     const [textEntered, setTextEntered] = useState(false);
+    const [currentGuess, setCurrentGuess] = useState(''); // State to hold the current guess
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -26,6 +27,7 @@ function App() {
                 setCorrectGuess(true);
             }
             setDuplicateGuess(false);
+            setCurrentGuess(pokemon); // Update the current guess state
         }
     };
 
@@ -41,22 +43,21 @@ function App() {
             setDuplicateGuess(false); // Reset duplicate guess message when text is cleared
         }
     };
-    
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="counter">Number of guesses: {guesses.length}</div>
             <form onSubmit={handleSubmit}>
-            <input 
-                value={pokemon} 
-                onChange={handleChange} 
-                style={{ margin: '0 auto', marginBottom: '20px' }} 
-                placeholder={correctGuess ? "Congratulations!" : "Enter your guess here..."} // Add a placeholder
-            />
-
+                <input 
+                    value={pokemon} 
+                    onChange={handleChange} 
+                    style={{ margin: '0 auto', marginBottom: '20px' }} 
+                    placeholder={correctGuess ? "Congratulations!" : "Enter your guess here..."} // Add a placeholder
+                />
                 <button type="submit">Guess</button>
             </form>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <ResponseBox isCorrectGuess={number === 1} isDuplicateGuess={duplicateGuess} />
+                <ResponseBox isCorrectGuess={number === 1} isDuplicateGuess={duplicateGuess} currentGuess={currentGuess}/>
                 {guesses.map((guess, index) => (
                     <div 
                         key={index} 

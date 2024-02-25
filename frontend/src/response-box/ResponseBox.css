@@ -23,6 +23,7 @@
   .response-box.already-guessed {
     border-color: #ff0000;
     background-color: #ffd6d6; /* Light red background color for already guessed */
+    width: fit-content;
   }
   
   .response-box.has-text-entered {
