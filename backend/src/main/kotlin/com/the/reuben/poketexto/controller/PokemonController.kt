@@ -16,7 +16,7 @@ class PokemonController {
 
     @GetMapping("/guess/{pokemon}")
     fun guessPokemon(@PathVariable pokemon: String): ResponseEntity<Map<String, Any>> {
-        if(pokemon.equals("win")) {
+        if(pokemon == "win") {
             return ResponseEntity.ok(mapOf("name" to "win", "integer" to 1))
         }
         // Logic to generate the integer goes here

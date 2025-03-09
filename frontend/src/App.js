@@ -27,8 +27,8 @@ function App() {
                 setCorrectGuess(true);
             }
             setDuplicateGuess(false);
-            setCurrentGuess(pokemon); // Update the current guess state
         }
+        setCurrentGuess(pokemon); // Update the current guess state
     };
 
     const handleChange = (event) => {
